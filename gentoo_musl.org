@@ -1,5 +1,6 @@
 #+TITLE: Gentoo GSoC Application
 #+AUTHOR: Alfred Persson Forsberg <cat@catcream.org>
+#+DATE:
 #+OPTIONS: toc:nil
 * Gentoo GSoC Application
 
