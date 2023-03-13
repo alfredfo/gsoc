@@ -94,48 +94,8 @@ my help I will use [[https://openlibm.org/][Julia's openlibm]] and [[https://wik
 Expected 350 hours. (12 weeks, 28h/week)
 Will work 6 hours a day on mon, tue, wed & thu and 5 hours on sundays.
 
-+ Setting up an ideal working environment and learning the workflow of Gentoo will be done before the project starts,
-   mostly during the "Community Bonding"-period.
-  
-Most of my project will be around porting the KDE desktop and application suite,
-starting with getting the desktop itself to run and later on porting the applications.
-I will divide packages into three groups: builds, runs and "passes test suites".
+... + expected work for each week
 
-** Week 1 & 2
-Getting core libraries ported so Plasma can build correctly.
-   + the QT libraries (except qtwebengine, see week 6)
-   + kde-plasma/kwayland-server
-   + kde-plasma/libk*
-   + kde-frameworks/*
-** Week 3 & 4
-The Plasma desktop itself, starting with the basic parts like the window manager.
-Then making sure other essential parts like the dock, settings panel and status bar function correctly.
-This means kde-plasma/plasma-meta will run, as well as packages regarding sound, bluetooth and wifi.
-** Week 5
-This week will be dedicated to squashing all the bugs and polishing my work this far.
-
-By week 5 most, if not all, tests should pass for the software currently ported.
-The KDE Plasma desktop itself should run flawlessly and I will manually check for any runtime bugs aswell.
-
-** Week 6
-At the start of this week I will try to get my work done this far merged upstream. (mon, tue).
-The rest of the week will be dedicated to getting dev-qt/qtwebengine to work.
-This should mean that qtwebengine based web browsers should
-build with some minor patches.
-+ By week 6 www-client/qutebrowser should be running fine.
-** Week 7
-Porting core KDE applications, namely Dolphin, Konsole and Ark.
-These should pass test suites.
-** Week 8 & 9
-The rest of the KDE suite of applications. Most applications should run without issues. Some more obscure, dead or useless ones will be skipped.
-** Week 10
-Polishing the work this far, similar to what I did in week 5. Test suites for KDE applications should pass.
-** Week 11
-Pushing for changes to be merged upstream, also responding and fixing any feedback given from upstream developers.
-** Week 12
-This week will be fully dedicated to writing documentation, mostly a musl porting guide for other developers.
-   
-   
 Documentation will be written continuously during the project, and blog posts will be made at the end of each week.
 If I discover something I want to write about / think is extremely useful I may write a separate blog post for that at any time during the project as well. 
 
