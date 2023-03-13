@@ -71,8 +71,8 @@ By week 5 most, if not all, tests should pass for the software currently ported.
 This week will be dedicated to squashing all the bugs and polishing my work this far. 
 ** Week 6
 Getting dev-qt/qtwebengine to work. This should mean that qtwebengine based web browsers should
-just build and run with some minor patches.
-By week 6 www-client/qutebrowser should build & run.
+build with some minor patches.
++ By week 6 www-client/qutebrowser should be running fine.
 ** Week 7
 Porting core KDE applications, namely Dolphin, Konsole and Ark.
 These should pass test suites.
