@@ -25,6 +25,7 @@ running glibc applications where the source code is not available / software whi
 * Deliverables
 + Full KDE Plasma desktop and QT libraries, focus on Wayland and PipeWire. 
 + Web browsers, qutebrowser should just work with qtwebengine ported.
++ Most KDE applications
 
 This project when finished will consist of:
 + Patches/commits/pull requests etc. to upstream projects.
