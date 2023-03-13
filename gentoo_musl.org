@@ -113,5 +113,5 @@ I've never seriously contributed to free software projects and most patches or k
 I really hope Google Summer of Code can change that and I hope to later become part of the Gentoo team.
 
 ** References
-[1] https://wiki.gentoo.org/wiki/User:Sam/Musl_porting_notes
-[2] https://wiki.gentoo.org/wiki/Chroot
++ [1] https://wiki.gentoo.org/wiki/User:Sam/Musl_porting_notes
++ [2] https://wiki.gentoo.org/wiki/Chroot
