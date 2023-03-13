@@ -74,11 +74,11 @@ it's not complete quite yet. Most C programs I've tried work, but
 building libc++ runs into issues because it assumes the libc is
 complete. If you want a list of which functions are available, look
 here:
-https://github.com/llvm/llvm-project/blob/main/libc/config/linux/x86_64/entrypoints.txt. I'd
-guess that python wouldn't quite work yet since we don't have all of
-the double precision math functions yet, though you might be able to
-fudge it by creating entrypoints that just call the single precision
-versions.
+https://github.com/llvm/llvm-project/blob/main/libc/config/linux/x86_64/entrypoints.txt.
+I'd guess that python wouldn't quite work yet since we don't have all
+of the double precision math functions yet, though you might be able
+to fudge it by creating entrypoints that just call the single
+precision versions.
 #+end_quote
 My idea here is to temporarily hack in the missing functions and later
 on work to get these missing functions upstreamed into LLVM libc. To
