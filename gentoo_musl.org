@@ -19,8 +19,8 @@ I also hope that more binary packages (*-bin) will become statically linked with
 
 musl is also known for being able to find runtime bugs for software buildable with glibc. These bugs will also be reported benefiting both musl and glibc users.
 
-To make this switch as painless as possible for users I will also write documentation for glibc compatibility for software where the source code
-is not available / software which does not yet build with musl.
+To make the switch from glibc to musl for new users as painless as possible I will also write documentation for
+running glibc applications where the source code is not available / software which does not yet build with musl.
 
 
 ** Deliverables
@@ -30,13 +30,13 @@ is not available / software which does not yet build with musl.
 This project when finished will consist of:
 + Patches/commits/pull requests etc. to upstream projects.
   Getting fixes for musl upstream is better than just having patches for Gentoo because it means that more people can use it and
-  the developers of these projects will most likely continue support for musl instead of the patches breaking when the code changes. 
-+ Patches (.patch files) for Gentoo (gentoo.git).
+  the developers of these projects will most likely continue support for musl instead of downstream patches breaking when the code changes. 
++ Patches (.patch files) for Gentoo and commits to gentoo.git.
   Though getting the patches merged upstream is ideal, sometimes it's not possible. For example if the project is dead/abandoned or
   if it only applies to Gentoo systems.
 + Documentation for other developers who want to contribute and port software for musl.
   Extending [1].
-+ Documentation for users who want to run glibc software (inside a Gentoo/glibc chroot).
++ Documentation for users who want to run glibc software.
   Extending [2] with documentation for running desktop applications with sound and graphics. Including PipeWire, Wayland, X & PulseAudio.
   From my testing both software inside a glibc chroot and Flatpaks runs great. A simple guide on how to take a tarball with proprietary software
   and turn it into a Flatpak with flatpak-builder will be available, as well as setting up sound and graphics for a chrooted Gentoo glibc environment.
@@ -44,15 +44,17 @@ This project when finished will consist of:
   All patches will be put in ::gentoo and musl will "just be supported" without the need of an overlay repository.
 + A simple blog with my progress! I will put everything there and then rewrite important parts as documentation on the Gentoo wiki.
 
-  
 
 ** Timeline
 Expected 175 hours.
 Further info after discussion with mentor.
 
-+ Setting up an ideal working environment and learning the workflow of Gentoo will be done before the project starts, mostly during the "Community Bonding"-period.
++ Setting up an ideal working environment and learning the workflow of Gentoo will be done before the project starts,
+   mostly during the "Community Bonding"-period.
   
-Most of my project will be around porting the KDE desktop and application suite, starting with getting the desktop itselfd to run and later on porting the applications. 
+Most of my project will be around porting the KDE desktop and application suite,
+starting with getting the desktop itself to run and later on porting the applications.
+
 1. Getting core libraries ported so Plasma can build correctly.
 2. The Plasma desktop itself, starting with the basic parts like the window manager.
    Then making sure other essential parts like the dock, settings panel and status bar function correctly.
