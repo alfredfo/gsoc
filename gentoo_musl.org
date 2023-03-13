@@ -1,3 +1,6 @@
+#+TITLE: Gentoo GSoC Application
+#+AUTHOR: Alfred Persson Forsberg <cat@catcream.org>
+#+OPTIONS: toc:nil
 * Gentoo GSoC Application
 
 ** Abstract
@@ -46,7 +49,7 @@ My first step into programming and computer science was with game hacking. When 
 cheats, I was curious how it worked so I started to experiment with it by for example rewriting parts of the program and adding functionality by mostly
 looking at other projects.
 Having almost never coded before I got hooked to an extreme level and I wanted to learn more and more, which made me learn C++ quickly.
-Game hacking was also what got me into debugging, assembly and operating system programming, which has been useful since.
+Game hacking was also my first step into debugging, assembly and operating system programming, which has been useful since.
 After starting high school I pretty much stopped working on large projects due to lack of time and I hope GSoC can change that!
 
 I've never seriously contributed to free software projects and most patches or knowledge I've just kept to myself instead of sharing it with others.
