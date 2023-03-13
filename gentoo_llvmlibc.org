@@ -106,29 +106,10 @@ can fall back to system libc for missing functionality.
 
 
 * Biography
-Hello! My name is Alfred. I am a Swedish 19 year old and I've been a Gentoo user for around 1.5 years now comming from Windows and macOS.
-I think Gentoo is an awesome operating system because it gives the user so much control.
-I currently run Gentoo/musl on my laptop with Sway and Pipewire with the intent of putting it on my espressobin router as well.
+Hello! My name is Alfred. I am a Swedish 20 year old and I've been a
+Gentoo user for around 2.5 years now comming from Windows and macOS.
 
+... + more (my last gsoc project)
 
-I am a student currently studying first year of electrical engineering at Chalmers University of Technology.
-In high school I studied science with mathematical specialization at Hvitfeldtska (standard science programme + 4 extra math courses in
-logic, problem solving, calculus, etc.).
-I will therefore also work on getting CAD software, typesetting software like *TeX, Octave and software for my router to work on musl,
-although that is not included in this project so that I can have a reasonable scope and clear deliverables. 
-
-
-Since I was a kid I've always had an interest in computer software, specifically how to break it and make it do whatever you want.
-My first step into programming and computer science was with game hacking. When I was in 7th grade (13 years old) I downloaded source code for
-cheats, I was curious how it worked so I started to experiment with it by for example rewriting parts of the program and adding functionality by mostly
-looking at other projects.
-Having almost never coded before I got hooked to an extreme level and I wanted to learn more and more, which made me learn C++ quickly.
-Game hacking was also my first step into debugging, assembly and operating system programming, which has been useful since.
-After starting high school I pretty much stopped working on large projects due to lack of time and I hope GSoC can change that!
-
-I've never seriously contributed to free software projects and most patches or knowledge I've just kept to myself instead of sharing it with others.
-I really hope Google Summer of Code can change that and I hope to later become part of the Gentoo team.
-
-** References
-+ [1] https://wiki.gentoo.org/wiki/User:Sam/Musl_porting_notes
-+ [2] https://wiki.gentoo.org/wiki/Chroot
+I think Gentoo is an awesome operating system because it gives the
+user so much control.
