@@ -1,0 +1,140 @@
+#+TITLE: Gentoo GSoC 2023 Application for Bootstapping Gentoo with The LLVM C Library
+#+AUTHOR: Alfred Persson Forsberg <cat@catcream.org>
+#+DATE:
+#+OPTIONS: toc:nil
+#+LATEX_HEADER: \usepackage[margin=1.0in]{geometry}
+
+* Introduction
+LLVM libc is a relatively new libc implementation created by the LLVM foundation. It is still not complete and lacks some functionality one may assume, such as dynamic linking and the ability to use ~libc++~ for linking C++ programs. This will be one of the first efforts to create a whole actual system using it.
+
+** Goals of the libc
+The goals of this libc is to be a cross platform (Windows, macOS, Linux and Fuschia) C library that includes a complete test suite for both public and internal functions. It also permits fuzzing and sanitizer instrumentation for binaries that include libc functions. It is also easily decomposed so users can replace C library functionality easily, to for example get consistent math precision for ~libm~.
+
+** Standards compliance
+LLVM libc will be compliant with POSIX and recent C standards, such as C17 and C23.
+
+** Build modes
+Interestingly this libc can be built in both *fullbuild mode* and *overlay mode*.
+
+Fullbuild mode is the traditional way of building a libc, meaning that the libc will be built as ~libc.a~ and all executables depending on libc functionality will link to it as usual.
+
+Overlay mode on the other hand builds LLVM libc as ~libllvmlibc.a~ and does not replace the system libc implementation completely. Instead it uses link order semantics to primarily link binaries to LLVM libc, and missing functions will instead be linked to the system libc.
+
+Fushcia currently uses a mixture of musl and LLVM libc. It does not use overlay mode but instead a custom build system that takes parts of both.
+
+#+begin_quote
+The current way Fuchsia builds their libc is fairly strange. They use their own custom build system to build a libc that's made of both LLVM libc parts and musl parts. This makes it so that when they finish switching all the functions over they have a single libc instead of two complete libcs, one that now has to be removed. -- *Michael Jones (LLVM libc developer)*
+#+end_quote
+
+* Objective
+The goal of this project is to improve the number of packages to run with musl libc on Gentoo, with a focus on desktop and development use-cases.
+Primarily the Plasma desktop environment along with the KDE Applications and QT libraries.
+
+As musl is developed with security in mind I hope this project will make it become the default libc implementation for Gentoo hardened desktops.
+I also hope that more binary packages (*-bin) will become statically linked with musl for ensuring compatibility with every setup, regardless of the system libc implementation.
+
+musl is also known for being able to find runtime bugs for software buildable with glibc. These bugs will also be reported benefiting both musl and glibc users.
+
+
+
+
+* Deliverables
++ Full KDE Plasma desktop and QT libraries, focus on Wayland and PipeWire. 
++ Web browsers, qutebrowser should just work with qtwebengine ported.
++ Most KDE applications
+
+This project when finished will consist of:
++ Patches/commits/pull requests etc. to upstream projects.
+  Getting fixes for musl upstream is better than just having patches for Gentoo because it means that more people can use it and
+  the developers of these projects will most likely continue support for musl instead of downstream patches breaking when the code changes. 
++ Patches (.patch files) for Gentoo and commits to gentoo.git.
+  Though getting the patches merged upstream is ideal, sometimes it's not possible. For example if the project is dead/abandoned or
+  if it only applies to Gentoo systems.
++ Documentation for other developers who want to contribute and port software for musl.
+  Extending [1].
++ Documentation for users who want to run glibc software.
+  Extending [2] with documentation for running desktop applications with sound and graphics. Including PipeWire, Wayland, X & PulseAudio.
+  From my testing both software inside a glibc chroot and Flatpaks runs great. A simple guide on how to take a tarball with proprietary software
+  and turn it into a Flatpak with flatpak-builder will be available, as well as setting up sound and graphics for a chrooted Gentoo glibc environment.
++ The removal of the ::musl overlay.
+  All patches will be put in ::gentoo and musl will "just be supported" without the need of an overlay repository.
++ A simple blog with my progress! I will put everything there and then rewrite important parts as documentation on the Gentoo wiki.
+
+
+* Timeline
+Expected 350 hours. (12 weeks, 28h/week)
+Will work 6 hours a day on mon, tue, wed & thu and 5 hours on sundays.
+
++ Setting up an ideal working environment and learning the workflow of Gentoo will be done before the project starts,
+   mostly during the "Community Bonding"-period.
+  
+Most of my project will be around porting the KDE desktop and application suite,
+starting with getting the desktop itself to run and later on porting the applications.
+I will divide packages into three groups: builds, runs and "passes test suites".
+
+** Week 1 & 2
+Getting core libraries ported so Plasma can build correctly.
+   + the QT libraries (except qtwebengine, see week 6)
+   + kde-plasma/kwayland-server
+   + kde-plasma/libk*
+   + kde-frameworks/*
+** Week 3 & 4
+The Plasma desktop itself, starting with the basic parts like the window manager.
+Then making sure other essential parts like the dock, settings panel and status bar function correctly.
+This means kde-plasma/plasma-meta will run, as well as packages regarding sound, bluetooth and wifi.
+** Week 5
+This week will be dedicated to squashing all the bugs and polishing my work this far.
+
+By week 5 most, if not all, tests should pass for the software currently ported.
+The KDE Plasma desktop itself should run flawlessly and I will manually check for any runtime bugs aswell.
+
+** Week 6
+At the start of this week I will try to get my work done this far merged upstream. (mon, tue).
+The rest of the week will be dedicated to getting dev-qt/qtwebengine to work.
+This should mean that qtwebengine based web browsers should
+build with some minor patches.
++ By week 6 www-client/qutebrowser should be running fine.
+** Week 7
+Porting core KDE applications, namely Dolphin, Konsole and Ark.
+These should pass test suites.
+** Week 8 & 9
+The rest of the KDE suite of applications. Most applications should run without issues. Some more obscure, dead or useless ones will be skipped.
+** Week 10
+Polishing the work this far, similar to what I did in week 5. Test suites for KDE applications should pass.
+** Week 11
+Pushing for changes to be merged upstream, also responding and fixing any feedback given from upstream developers.
+** Week 12
+This week will be fully dedicated to writing documentation, mostly a musl porting guide for other developers.
+   
+   
+Documentation will be written continuously during the project, and blog posts will be made at the end of each week.
+If I discover something I want to write about / think is extremely useful I may write a separate blog post for that at any time during the project as well. 
+
+
+* Biography
+Hello! My name is Alfred. I am a Swedish 19 year old and I've been a Gentoo user for around 1.5 years now comming from Windows and macOS.
+I think Gentoo is an awesome operating system because it gives the user so much control.
+I currently run Gentoo/musl on my laptop with Sway and Pipewire with the intent of putting it on my espressobin router as well.
+
+
+I am a student currently studying first year of electrical engineering at Chalmers University of Technology.
+In high school I studied science with mathematical specialization at Hvitfeldtska (standard science programme + 4 extra math courses in
+logic, problem solving, calculus, etc.).
+I will therefore also work on getting CAD software, typesetting software like *TeX, Octave and software for my router to work on musl,
+although that is not included in this project so that I can have a reasonable scope and clear deliverables. 
+
+
+Since I was a kid I've always had an interest in computer software, specifically how to break it and make it do whatever you want.
+My first step into programming and computer science was with game hacking. When I was in 7th grade (13 years old) I downloaded source code for
+cheats, I was curious how it worked so I started to experiment with it by for example rewriting parts of the program and adding functionality by mostly
+looking at other projects.
+Having almost never coded before I got hooked to an extreme level and I wanted to learn more and more, which made me learn C++ quickly.
+Game hacking was also my first step into debugging, assembly and operating system programming, which has been useful since.
+After starting high school I pretty much stopped working on large projects due to lack of time and I hope GSoC can change that!
+
+I've never seriously contributed to free software projects and most patches or knowledge I've just kept to myself instead of sharing it with others.
+I really hope Google Summer of Code can change that and I hope to later become part of the Gentoo team.
+
+** References
++ [1] https://wiki.gentoo.org/wiki/User:Sam/Musl_porting_notes
++ [2] https://wiki.gentoo.org/wiki/Chroot
