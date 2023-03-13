@@ -60,6 +60,9 @@ to have a working terminal-based desktop with simple utilities, and an
 experimental stage3 for others who want to contribute, or simply want
 to try something new :)
 
+** TODO Crossdev
+Set up LLVM libc using crossdev
+
 * Feasibility
 I have spoken with Michael Jones, a LLVM libc developer, about this
 project and gotten a very positive response. My guess is that the
@@ -94,6 +97,7 @@ my help I will use [[https://openlibm.org/][Julia's openlibm]] and [[https://wik
 Expected 350 hours. (12 weeks, 28h/week)
 Will work 6 hours a day on mon, tue, wed & thu and 5 hours on sundays.
 
+** TODO Expected weekly work
 ... + expected work for each week
 
 Documentation will be written continuously during the project, and blog posts will be made at the end of each week.
@@ -105,7 +109,7 @@ mode. This will instantly get much more software running because it
 can fall back to system libc for missing functionality.
 
 
-* Biography
+* TODO Biography
 Hello! My name is Alfred. I am a Swedish 20 year old and I've been a
 Gentoo user for around 2.5 years now comming from Windows and macOS.
 
