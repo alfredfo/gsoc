@@ -31,6 +31,9 @@ The goal of this project is to get a Gentoo Linux system running with LLVM
 libc running as the system libc, in other words, bootstrapping Portage
 on a LLVM/Linux system.
 
+* Feasibility
+I have spoken with Michael Jones, a LLVM libc developer, about this
+project and ...
 
 * Deliverables
 + Full KDE Plasma desktop and QT libraries, focus on Wayland and PipeWire. 
