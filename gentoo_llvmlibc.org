@@ -34,7 +34,8 @@ libc functionality will link to it as usual.
 Overlay mode on the other hand builds LLVM libc as ~libllvmlibc.a~ and
 does not replace the system libc implementation completely. Instead it
 uses link order semantics to primarily link binaries to LLVM libc, and
-missing functions will instead be linked to the system libc.
+missing functions will instead be linked to the system
+libc. [fn::Dynamic linking is not yet supported, hence only .a].
 
 Fushcia currently uses a mixture of musl and LLVM libc. It does not
 use overlay mode but instead a custom build system that takes parts
