@@ -60,6 +60,7 @@ Getting core libraries ported so Plasma can build correctly.
    + the QT libraries (except qtwebengine, see week 6)
    + kde-plasma/kwayland-server
    + kde-plasma/libk*
+   + kde-frameworks/*
 ** Week 3 & 4
 The Plasma desktop itself, starting with the basic parts like the window manager.
 Then making sure other essential parts like the dock, settings panel and status bar function correctly.
