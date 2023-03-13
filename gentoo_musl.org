@@ -47,7 +47,6 @@ This project when finished will consist of:
 * Timeline
 Expected 350 hours. (12 weeks, 28h/week)
 Will work 6 hours a day on mon, tue, wed & thu and 5 hours on sundays.
-Further info after discussion with mentor.
 
 + Setting up an ideal working environment and learning the workflow of Gentoo will be done before the project starts,
    mostly during the "Community Bonding"-period.
