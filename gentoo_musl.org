@@ -14,9 +14,10 @@ musl claims to be both forward and backwards compatible between releases and it 
 The goal of this project is to improve the number of packages to run with musl libc on Gentoo, with a focus on desktop and development use-cases.
 Primarily the Plasma desktop environment along with the KDE Applications and QT libraries.
 
-
 As musl is developed with security in mind I hope this project will make it become the default libc implementation for Gentoo hardened desktops.
 I also hope that more binary packages (*-bin) will become statically linked with musl for ensuring compatibility with every setup, regardless of the system libc implementation.
+
+musl is also known for being able to find runtime bugs for software buildable with glibc. These bugs will also be reported benefiting both musl and glibc users.
 
 To make this switch as painless as possible for users I will also write documentation for glibc compatibility for software where the source code
 is not available / software which does not yet build with musl.
@@ -27,13 +28,20 @@ is not available / software which does not yet build with musl.
 + Web browsers, qutebrowser should just work with qtwebengine ported.
 
 This project when finished will consist of:
-+ Patches (.patch files) for software where upstream cannot yet build with musl.
-  Though getting the patches merged upstream is ideal.
++ Patches/commits/pull requests etc. to upstream projects.
+  Getting fixes for musl upstream is better than just having patches for Gentoo because it means that more people can use it and
+  the developers of these projects will most likely continue support for musl instead of the patches breaking when the code changes. 
++ Patches (.patch files) for Gentoo (gentoo.git).
+  Though getting the patches merged upstream is ideal, sometimes it's not possible. For example if the project is dead/abandoned or
+  if it only applies to Gentoo systems.
 + Documentation for other developers who want to contribute and port software for musl.
   Extending [1].
 + Documentation for users who want to run glibc software (inside a Gentoo/glibc chroot).
   Extending [2] with documentation for running desktop applications with sound and graphics. Including PipeWire, Wayland, X & PulseAudio.
-+ A lot of git commits to ::musl
+  From my testing both software inside a glibc chroot and Flatpaks runs great. A simple guide on how to take a tarball with proprietary software
+  and turn it into a Flatpak with flatpak-builder will be available, as well as setting up sound and graphics for a chrooted Gentoo glibc environment.
++ The removal of the ::musl overlay.
+  All patches will be put in ::gentoo and musl will "just be supported" without the need of an overlay repository.
 + A simple blog with my progress! I will put everything there and then rewrite important parts as documentation on the Gentoo wiki.
 
 
