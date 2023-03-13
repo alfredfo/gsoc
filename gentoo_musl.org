@@ -58,7 +58,7 @@ I will divide packages into three groups: builds, runs and "passes test suites".
 
 ** Week 1 & 2
 Getting core libraries ported so Plasma can build correctly.
-   + the QT libraries (except qtwebengine)
+   + the QT libraries (except qtwebengine, see week 6)
    + kde-plasma/kwayland-server
    + kde-plasma/libk*
 ** Week 3 & 4
@@ -70,7 +70,9 @@ Making sure the KDE desktop runs correctly by passing all test suites and manual
 By week 5 most, if not all, tests should pass for the software currently ported.
 This week will be dedicated to squashing all the bugs and polishing my work this far. 
 ** Week 6
-Getting a web browser to run like Qutebrowser, which should just build when dev-qt/qtwebengine works.
+Getting dev-qt/qtwebengine to work. This should mean that qtwebengine based web browsers should
+just build and run with some minor patches.
+By week 6 www-client/qutebrowser should build & run.
 ** Week 7
 Porting core KDE applications, namely Dolphin, Konsole and Ark.
 These should pass test suites.
