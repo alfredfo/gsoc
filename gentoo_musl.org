@@ -1,0 +1,64 @@
+# Gentoo GSoC Application
+
+## Abstract
+Musl[1] is a simple libc implementation focused on being secure and standard comformant.
+It provdes C bindings for interacting with Linux interfaces as well as pure C functions such as strstr and sqrt.
+
+The goal of this project is to improve the number of packages to run with Musl libc on Gentoo, primarily regarding desktop and development use-cases.
+To make this switch as painless as possible I will also write a glibc compatibility tool for software where the source code
+is not available / software which does not yet build with musl.
+
+
+## Objective
+The objective of this project is to make musl a viable alternative to glibc for desktop systems.
+Because Musl is a lot simpler than glibc it has less room for bugs and security issues which is important for any internet connected computer.
+
+I personally believe musl is the future of libc on Linux systems as its license and ability to be statically linked makes it the perfect choice
+for developers who want to provide binaries to users.
+Because of this I think Gentoo should support musl as a first class citizen.
+
+
+## Deliverables
+* Full KDE Plasma
+* Web browsers, primarily LibreWolf/Firefox, maybe webkit[gtk/qt].
+* What I use: Sway + Alacritty + MPV + yt-dlp + LibreWolf + wofi + Golang + Emacs + Helix + Neovim.
+
+This project when finished will consist of:
+* Patches (.patch files) for software where upstream cannot yet build with musl.
+Though getting the patches merged upstream is ideal.
+* A glibc compatibility tool based on [2] with source code will be available
+This will be built around portage as the binaries may have external dynamic dependencies.
+* Documentation for other developers who want to contribute and port software for musl
+Extending [3].
+* A simple blog with my progress!
+
+
+## Timeline
+Expected 175 hours.
+Further info after discussion with mentor.
+
+
+## Biography
+Hello! My name is Alfred, I am from Sweden and curretly studying first year of electrical engineering at Chalmers University of Technology.
+In high school I studied science with mathematical specialization at Hvitfeldtska (standard science programme + 4 extra math courses in
+logic, problem solving, calculus, etc.)
+Since I was a kid I've always had an interest in computer software, specifically how to break it and make it do whatever you want.
+My first step into programming and computer science was with game hacking. When I was in 7th grade (13 years old) I downloaded source code for
+Counter Strike cheats, I was curious how it worked so I started to experiment with the source code by for example rewriting parts of the program
+and adding functionality by looking at other projects.
+Having almost never coded before I got hooked to an extreme level and I wanted to learn more and more, which made me learn C++ very quickly.
+I continued to program cheats until I started high school, after that I didn't have as much time and I pretty much stopped since :(.
+Game hacking accounts for basically all knowledge I have in debugging, assembly, operating system/kernel programming (yes, kernel, for AC bypassing).
+
+I've been using Gentoo for around 1,5 years comming from macOS and Windows. I instatly fell in love with it and put it on both my laptop and desktop.
+For me Gentoo has been pretty much pain-free and most breakages have only been helpful for me learning more.
+
+Because of school I've never been able to seriously contribute to free software projects and most patches I've just kept to myself. I really hope
+Google Summer of Code can change that and maybe later become a part of the Gentoo team.
+
+
+
+# ref
+[1] https://musl.libc.org/
+[2] https://github.com/gch1p/voidnsrun
+[3] https://wiki.gentoo.org/wiki/User:Sam/Musl_porting_notes
