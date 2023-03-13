@@ -54,7 +54,6 @@ Further info after discussion with mentor.
 Most of my project will be around porting the KDE desktop and application suite,
 starting with getting the desktop itself to run and later on porting the applications.
 I will divide packages into three groups: builds, runs and "passes test suites".
-"Works" means runs correctly without apparent bugs.
 ** Week 1
    Getting core libraries ported so Plasma can build correctly.
    + the QT libraries (except qtwebengine)
@@ -72,7 +71,8 @@ I will divide packages into three groups: builds, runs and "passes test suites".
    Starting with Dolphin, Konsole and Ark, then Gwenview, Kate, Okular and Kcalc if time allows it.
    
 
-Documentation will be written continuously during the project.
+Documentation will be written continuously during the project, and blog posts will be made at the end of each week.
+If I discover something I want to write about / think is extremely useful I may write a separate blog post for that at any time during the project as well. 
 
 
 * Biography
