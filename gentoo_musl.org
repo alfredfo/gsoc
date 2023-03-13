@@ -15,7 +15,7 @@ The goal of this project is to improve the number of packages to run with musl l
 Primarily the Plasma desktop environment along with the KDE Applications and QT libraries.
 
 As musl is developed with security in mind I hope this project will make it become the default libc implementation for Gentoo hardened desktops.
-I also hope that binary packages (*-bin) will become pure static binaries built with musl for ensuring compatibility with every setup.
+I also hope that more binary packages (*-bin) will become pure static binaries built with musl for ensuring compatibility with every setup, regardless of their libc implementation.
 
 To make this switch as painless as possible for users I will also write documentation for glibc compatibility for software where the source code
 is not available / software which does not yet build with musl.
@@ -32,6 +32,7 @@ This project when finished will consist of:
   Extending [1].
 + Documentation for users who want to run glibc software (inside a Gentoo/glibc chroot).
   Extending [2] with documentation for running desktop applications with sound and graphics. Including PipeWire, Wayland, X & PulseAudio.
++ A lot of git commits to ::musl
 + A simple blog with my progress! I will put everything here and then rewrite important parts as documentation on the Gentoo wiki.
 
 
@@ -41,8 +42,9 @@ Further info after discussion with mentor.
 
 
 ** Biography
-Hello! My name is Alfred. I am a Swedish 19 year old and I've been a Gentoo user for around 1.5 years now comming from Windows and macOS. I think it's an awesome operating system
-because it gives the user so much control. I run Gentoo/musl on my laptop and thinking about putting it on my espressobin router aswell.
+Hello! My name is Alfred. I am a Swedish 19 year old and I've been a Gentoo user for around 1.5 years now comming from Windows and macOS.
+I think it's an awesome operating system because it gives the user so much control.
+I run Gentoo/musl on my laptop and thinking about putting it on my espressobin router aswell.
 I am a student currently studying first year of electrical engineering at Chalmers University of Technology.
 In high school I studied science with mathematical specialization at Hvitfeldtska (standard science programme + 4 extra math courses in
 logic, problem solving, calculus, etc.)
