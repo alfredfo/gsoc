@@ -85,27 +85,10 @@ on work to get these missing functions upstreamed into LLVM libc. To
 my help I will use [[https://openlibm.org/][Julia's openlibm]] and [[https://wiki.musl-libc.org/mathematical-library.html][musl's libm]].
 
 * Deliverables
-+ Full KDE Plasma desktop and QT libraries, focus on Wayland and PipeWire. 
-+ Web browsers, qutebrowser should just work with qtwebengine ported.
-+ Most KDE applications
-
-This project when finished will consist of:
-+ Patches/commits/pull requests etc. to upstream projects.
-  Getting fixes for musl upstream is better than just having patches for Gentoo because it means that more people can use it and
-  the developers of these projects will most likely continue support for musl instead of downstream patches breaking when the code changes. 
-+ Patches (.patch files) for Gentoo and commits to gentoo.git.
-  Though getting the patches merged upstream is ideal, sometimes it's not possible. For example if the project is dead/abandoned or
-  if it only applies to Gentoo systems.
-+ Documentation for other developers who want to contribute and port software for musl.
-  Extending [1].
-+ Documentation for users who want to run glibc software.
-  Extending [2] with documentation for running desktop applications with sound and graphics. Including PipeWire, Wayland, X & PulseAudio.
-  From my testing both software inside a glibc chroot and Flatpaks runs great. A simple guide on how to take a tarball with proprietary software
-  and turn it into a Flatpak with flatpak-builder will be available, as well as setting up sound and graphics for a chrooted Gentoo glibc environment.
-+ The removal of the ::musl overlay.
-  All patches will be put in ::gentoo and musl will "just be supported" without the need of an overlay repository.
-+ A simple blog with my progress! I will put everything there and then rewrite important parts as documentation on the Gentoo wiki.
-
++ Portage running on a llvmlibc/Linux system.
++ Basic utilities for a basic terminal-based desktop.
++ An experimental stage3 tarball for other users.
++ Documentation on Gentoo wiki and blog posts.
 
 * Timeline
 Expected 350 hours. (12 weeks, 28h/week)
