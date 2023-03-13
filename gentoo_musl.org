@@ -58,7 +58,7 @@ I currently run Gentoo/musl on my laptop with Sway and Pipewire with the intent 
 
 I am a student currently studying first year of electrical engineering at Chalmers University of Technology.
 In high school I studied science with mathematical specialization at Hvitfeldtska (standard science programme + 4 extra math courses in
-logic, problem solving, calculus, etc.)
+logic, problem solving, calculus, etc.).
 I will therefore also work on getting CAD software, typesetting software like *TeX, Octave and software for my router to work on musl,
 although that is not included in this project so that I can have a reasonable scope and clear deliverables. 
 
