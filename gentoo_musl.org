@@ -55,6 +55,7 @@ Further info after discussion with mentor.
 Most of my project will be around porting the KDE desktop and application suite,
 starting with getting the desktop itself to run and later on porting the applications.
 I will divide packages into three groups: builds, runs and "passes test suites".
+
 ** Week 1 & 2
 Getting core libraries ported so Plasma can build correctly.
    + the QT libraries (except qtwebengine)
@@ -73,10 +74,12 @@ Getting a web browser to run like Qutebrowser, which should just build when dev-
 ** Week 7
 Porting core KDE applications, namely Dolphin, Konsole and Ark.
 These should pass test suites.
-** Week 8 to 10
+** Week 8 & 9
 The rest of the KDE suite of applications. Most applications should run without issues. Some more obscure, dead or useless ones will be skipped.
-** Week 11
+** Week 10
 Polishing the work this far, similar to what I did in week 5. Test suites for KDE applications should pass.
+** Week 11
+Pushing for changes to be merged upstream, also responding and fixing any feedback given from upstream developers.
 ** Week 12
 This week will be fully dedicated to writing documentation, mostly a musl porting guide for other developers.
    
