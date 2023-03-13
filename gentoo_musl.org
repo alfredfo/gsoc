@@ -59,6 +59,8 @@ In high school I studied science with mathematical specialization at Hvitfeldtsk
 logic, problem solving, calculus, etc.)
 I will therefore also work on getting CAD software, typesetting software like *TeX, Octave and software for my router to work on musl,
 although that is not included in this project so that I can have a reasonable scope and clear deliverables. 
+
+
 Since I was a kid I've always had an interest in computer software, specifically how to break it and make it do whatever you want.
 My first step into programming and computer science was with game hacking. When I was in 7th grade (13 years old) I downloaded source code for
 cheats, I was curious how it worked so I started to experiment with it by for example rewriting parts of the program and adding functionality by mostly
