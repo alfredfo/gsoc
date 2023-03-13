@@ -1,9 +1,9 @@
 * Gentoo GSoC Application
 
 ** Abstract
-Musl is a simple libc implementation focused on being secure and standard comformant.
+musl is a simple libc implementation focused on being secure and standard comformant.
 It provdes C bindings for interacting with Linux interfaces as well as pure C functions such as strstr and sqrt.
-Musl claims to be both forward and backwards compatible between releases
+musl claims to be both forward and backwards compatible between releases
 
 ** Objective
 The goal of this project is to improve the number of packages to run with musl libc on Gentoo, with a focus on desktop and development use-cases.
@@ -36,7 +36,7 @@ Further info after discussion with mentor.
 
 ** Biography
 Hello! My name is Alfred. I am from Sweden and I've been a Gentoo user for around 1.5 years now, comming from Windows and macOS. I think it's an awesome operating system
-because it gives the user so much control.
+because it gives the user so much control. I run Gentoo/musl on my laptop and thinking about putting it on my espressobin router aswell.
 I am a student curretly studying first year of electrical engineering at Chalmers University of Technology.
 In high school I studied science with mathematical specialization at Hvitfeldtska (standard science programme + 4 extra math courses in
 logic, problem solving, calculus, etc.)
