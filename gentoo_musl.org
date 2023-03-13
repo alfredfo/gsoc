@@ -1,60 +1,57 @@
-# Gentoo GSoC Application
+* Gentoo GSoC Application
 
-## Abstract
-Musl[1] is a simple libc implementation focused on being secure and standard comformant.
+** Abstract
+Musl is a simple libc implementation focused on being secure and standard comformant.
 It provdes C bindings for interacting with Linux interfaces as well as pure C functions such as strstr and sqrt.
+Musl claims to be both forward and backwards compatible between releases
 
-The goal of this project is to improve the number of packages to run with Musl libc on Gentoo, primarily regarding desktop and development use-cases.
-To make this switch as painless as possible I will also write a glibc compatibility tool for software where the source code
+** Objective
+The goal of this project is to improve the number of packages to run with musl libc on Gentoo, with a focus on desktop and development use-cases.
+Primarily the Plasma desktop environment along with the KDE Applications and QT libraries.
+To make this switch as painless as possible for users I will also write documentation for glibc compatibility for software where the source code
 is not available / software which does not yet build with musl.
 
-
-## Objective
-The objective of this project is to make musl a viable alternative to glibc for desktop systems.
-Because Musl is a lot simpler than glibc it has less room for bugs and security issues which is important for any internet connected computer.
-
-I personally believe musl is the future of libc on Linux systems as its license and ability to be statically linked makes it the perfect choice
-for developers who want to provide binaries to users.
-Because of this I think Gentoo should support musl as a first class citizen.
+As musl is developed with security in mind I hope this project will make it become the default libc implementation for Gentoo hardened desktops.
+I also hope that binary packages (*-bin) will become pure static binaries built with musl for ensuring compatibility with every setup.
 
 
-## Deliverables
-* Full KDE Plasma
-* Web browsers, primarily LibreWolf/Firefox, maybe webkit[gtk/qt].
-* What I use: Sway + Alacritty + MPV + yt-dlp + LibreWolf + wofi + Golang + Emacs + Helix + Neovim.
+** Deliverables
++ Full KDE Plasma desktop and QT libraries (qtwebengine!), focus on Wayland and PipeWire. 
++ Web browsers, qutebrowser should just work with qtwebengine ported. Also Firefox.
 
 This project when finished will consist of:
-* Patches (.patch files) for software where upstream cannot yet build with musl.
-Though getting the patches merged upstream is ideal.
-* A glibc compatibility tool based on [2] with source code will be available
-This will be built around portage as the binaries may have external dynamic dependencies.
-* Documentation for other developers who want to contribute and port software for musl
-Extending [3].
-* A simple blog with my progress!
++ Patches (.patch files) for software where upstream cannot yet build with musl.
+  Though getting the patches merged upstream is ideal.
++ Documentation for other developers who want to contribute and port software for musl.
+  Extending [3].
++ Documentation for users who want to run glibc software (inside a Gentoo/glibc chroot).
+  Extending [4] with documentation for running desktop applications with sound and graphics. Including PipeWire, Wayland, X & PulseAudio.
++ A simple blog with my progress! I will put everything here and then rewrite important parts as documentation on the Gentoo wiki.
 
 
-## Timeline
+** Timeline
 Expected 175 hours.
 Further info after discussion with mentor.
 
 
-## Biography
-Hello! My name is Alfred, I am from Sweden and curretly studying first year of electrical engineering at Chalmers University of Technology.
+** Biography
+Hello! My name is Alfred. I am from Sweden and I've been a Gentoo user for around 1.5 years now, comming from Windows and macOS. I think it's an awesome operating system
+because it gives the user so much control.
+I am a student curretly studying first year of electrical engineering at Chalmers University of Technology.
 In high school I studied science with mathematical specialization at Hvitfeldtska (standard science programme + 4 extra math courses in
 logic, problem solving, calculus, etc.)
 Since I was a kid I've always had an interest in computer software, specifically how to break it and make it do whatever you want.
 My first step into programming and computer science was with game hacking. When I was in 7th grade (13 years old) I downloaded source code for
-Counter Strike cheats, I was curious how it worked so I started to experiment with the source code by for example rewriting parts of the program
-and adding functionality by looking at other projects.
-Having almost never coded before I got hooked to an extreme level and I wanted to learn more and more, which made me learn C++ very quickly.
-I continued to program cheats until I started high school, after that I didn't have as much time and I pretty much stopped since :(.
-Game hacking accounts for basically all knowledge I have in debugging, assembly, operating system/kernel programming (yes, kernel, for AC bypassing).
+cheats, I was curious how it worked so I started to experiment with it by for example rewriting parts of the program and adding functionality by mostly
+looking at other projects.
+Having almost never coded before I got hooked to an extreme level and I wanted to learn more and more, which made me learn C++ quickly.
+Game hacking accounts for most knowledge I have in debugging, assembly and operating system programming. After starting high school I pretty much
+stopped working on large projects due to lack of time and I hope GSoC can change that!
 
-I've been using Gentoo for around 1,5 years comming from macOS and Windows. I instatly fell in love with it and put it on both my laptop and desktop.
-For me Gentoo has been pretty much pain-free and most breakages have only been helpful for me learning more.
-
-Because of school I've never been able to seriously contribute to free software projects and most patches I've just kept to myself. I really hope
-Google Summer of Code can change that and maybe later become a part of the Gentoo team.
+Because of lack of time I've never been able to seriously contribute to free software projects and most patches/knowledge I've just kept to myself
+instead of sharing them/writing documentation.
+I really hope
+Google Summer of Code can change that and I hope to later become part of the Gentoo team.
 
 
 
@@ -62,3 +59,4 @@ Google Summer of Code can change that and maybe later become a part of the Gento
 [1] https://musl.libc.org/
 [2] https://github.com/gch1p/voidnsrun
 [3] https://wiki.gentoo.org/wiki/User:Sam/Musl_porting_notes
+[4] https://wiki.gentoo.org/wiki/Chroot
