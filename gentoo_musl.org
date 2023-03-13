@@ -3,7 +3,7 @@
 ** Abstract
 musl is a simple libc implementation focused on being secure and standard comformant.
 It provdes C bindings for interacting with Linux interfaces as well as pure C functions such as strstr and sqrt.
-musl claims to be both forward and backwards compatible between releases
+musl claims to be both forward and backwards compatible between releases and it is much smaller and lighter than glibc.
 
 ** Objective
 The goal of this project is to improve the number of packages to run with musl libc on Gentoo, with a focus on desktop and development use-cases.
@@ -23,9 +23,9 @@ This project when finished will consist of:
 + Patches (.patch files) for software where upstream cannot yet build with musl.
   Though getting the patches merged upstream is ideal.
 + Documentation for other developers who want to contribute and port software for musl.
-  Extending [3].
+  Extending [1].
 + Documentation for users who want to run glibc software (inside a Gentoo/glibc chroot).
-  Extending [4] with documentation for running desktop applications with sound and graphics. Including PipeWire, Wayland, X & PulseAudio.
+  Extending [2] with documentation for running desktop applications with sound and graphics. Including PipeWire, Wayland, X & PulseAudio.
 + A simple blog with my progress! I will put everything here and then rewrite important parts as documentation on the Gentoo wiki.
 
 
@@ -35,9 +35,9 @@ Further info after discussion with mentor.
 
 
 ** Biography
-Hello! My name is Alfred. I am from Sweden and I've been a Gentoo user for around 1.5 years now, comming from Windows and macOS. I think it's an awesome operating system
+Hello! My name is Alfred. I am a Swedish 19 year old and I've been a Gentoo user for around 1.5 years now comming from Windows and macOS. I think it's an awesome operating system
 because it gives the user so much control. I run Gentoo/musl on my laptop and thinking about putting it on my espressobin router aswell.
-I am a student curretly studying first year of electrical engineering at Chalmers University of Technology.
+I am a student currently studying first year of electrical engineering at Chalmers University of Technology.
 In high school I studied science with mathematical specialization at Hvitfeldtska (standard science programme + 4 extra math courses in
 logic, problem solving, calculus, etc.)
 Since I was a kid I've always had an interest in computer software, specifically how to break it and make it do whatever you want.
@@ -53,10 +53,6 @@ instead of sharing them/writing documentation.
 I really hope
 Google Summer of Code can change that and I hope to later become part of the Gentoo team.
 
-
-
-# ref
-[1] https://musl.libc.org/
-[2] https://github.com/gch1p/voidnsrun
-[3] https://wiki.gentoo.org/wiki/User:Sam/Musl_porting_notes
-[4] https://wiki.gentoo.org/wiki/Chroot
+** References
+[1] https://wiki.gentoo.org/wiki/User:Sam/Musl_porting_notes
+[2] https://wiki.gentoo.org/wiki/Chroot
