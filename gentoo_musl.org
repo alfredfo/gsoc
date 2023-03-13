@@ -53,7 +53,7 @@ Further info after discussion with mentor.
   
 Most of my project will be around porting the KDE desktop and application suite,
 starting with getting the desktop itself to run and later on porting the applications.
-I will divide packages into three groups: builds, runs and works.
+I will divide packages into three groups: builds, runs and "passes test suites".
 "Works" means runs correctly without apparent bugs.
 ** Week 1
    Getting core libraries ported so Plasma can build correctly.
@@ -63,11 +63,10 @@ I will divide packages into three groups: builds, runs and works.
 ** Week 2 & 3
    The Plasma desktop itself, starting with the basic parts like the window manager.
    Then making sure other essential parts like the dock, settings panel and status bar function correctly.
-   This means kde-plasma/plasma-meta will build and run.
+   This means kde-plasma/plasma-meta will run.
 ** Week 4
-   Making sure the KDE desktop runs correctly, polishing all runtime bugs.
-   Also getting a web browser to run like Qutebrowser, which should just build and
-   run when dev-qt/qtwebengine works. 
+   Making sure the KDE desktop runs correctly by passing all test suites and manually checking for runtime bugs.
+   Also getting a web browser to run like Qutebrowser, which should just build when dev-qt/qtwebengine works. 
 ** Week 5 (and onward)
    Working out KDE Plasma bugs and porting other KDE applications.
    Starting with Dolphin, Konsole and Ark, then Gwenview, Kate, Okular and Kcalc if time allows it.
