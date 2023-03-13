@@ -67,7 +67,7 @@ This means kde-plasma/plasma-meta will run.
 ** Week 5
 Making sure the KDE desktop runs correctly by passing all test suites and manually checking for runtime bugs.
 By week 5 most, if not all, tests should pass for the software currently ported.
-This week will be dedicated to squash all the bugs and polishing. 
+This week will be dedicated to squashing all the bugs and polishing my work this far. 
 ** Week 6
 Getting a web browser to run like Qutebrowser, which should just build when dev-qt/qtwebengine works.
 ** Week 7
