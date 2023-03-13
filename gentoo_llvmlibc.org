@@ -62,7 +62,27 @@ to try something new :)
 
 * Feasibility
 I have spoken with Michael Jones, a LLVM libc developer, about this
-project and ...
+project and gotten a very positive response. My guess is that the
+hardest thing to get running here is Python. Thankfully it can be
+built without C++ and dynamic linking, so that should not be an
+issue. However, as LLVM libc is not complete yet there will probably
+be missing functions. I asked Michael about this and got the following
+reponse:
+#+begin_quote
+The full-build mode has most of the normal functions you'd want, but
+it's not complete quite yet. Most C programs I've tried work, but
+building libc++ runs into issues because it assumes the libc is
+complete. If you want a list of which functions are available, look
+here:
+https://github.com/llvm/llvm-project/blob/main/libc/config/linux/x86_64/entrypoints.txt. I'd
+guess that python wouldn't quite work yet since we don't have all of
+the double precision math functions yet, though you might be able to
+fudge it by creating entrypoints that just call the single precision
+versions.
+#+end_quote
+My idea here is to temporarily hack in the missing functions and later
+on work to get these missing functions upstreamed into LLVM libc. To
+my help I will use [[https://openlibm.org/][Julia's openlibm]] and [[https://wiki.musl-libc.org/mathematical-library.html][musl's libm]].
 
 * Deliverables
 + Full KDE Plasma desktop and QT libraries, focus on Wayland and PipeWire. 
