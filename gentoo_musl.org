@@ -2,7 +2,7 @@
 #+AUTHOR: Alfred Persson Forsberg <cat@catcream.org>
 #+DATE:
 #+OPTIONS: toc:nil
-#+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
+#+LATEX_HEADER: \usepackage[margin=1.5in]{geometry}
 * Gentoo GSoC Application
 
 ** Abstract
