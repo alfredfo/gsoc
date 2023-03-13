@@ -54,6 +54,8 @@ Documentation will be written continuously during the project.
 Hello! My name is Alfred. I am a Swedish 19 year old and I've been a Gentoo user for around 1.5 years now comming from Windows and macOS.
 I think Gentoo is an awesome operating system because it gives the user so much control.
 I currently run Gentoo/musl on my laptop with Sway and Pipewire with the intent of putting it on my espressobin router as well.
+
+
 I am a student currently studying first year of electrical engineering at Chalmers University of Technology.
 In high school I studied science with mathematical specialization at Hvitfeldtska (standard science programme + 4 extra math courses in
 logic, problem solving, calculus, etc.)
