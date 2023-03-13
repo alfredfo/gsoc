@@ -3,14 +3,13 @@
 #+DATE:
 #+OPTIONS: toc:nil
 #+LATEX_HEADER: \usepackage[margin=1.0in]{geometry}
-* Gentoo GSoC Application
 
-** Abstract
+* Abstract
 musl is a simple libc implementation focused on being secure and standard comformant.
 It provdes C bindings for interacting with Linux interfaces as well as pure C functions such as strstr and sqrt.
 musl claims to be both forward and backwards compatible between releases and it is much smaller and lighter than glibc.
 
-** Objective
+* Objective
 The goal of this project is to improve the number of packages to run with musl libc on Gentoo, with a focus on desktop and development use-cases.
 Primarily the Plasma desktop environment along with the KDE Applications and QT libraries.
 
@@ -23,7 +22,7 @@ To make the switch from glibc to musl for new users as painless as possible I wi
 running glibc applications where the source code is not available / software which does not yet build with musl.
 
 
-** Deliverables
+* Deliverables
 + Full KDE Plasma desktop and QT libraries (qtwebengine!), focus on Wayland and PipeWire. 
 + Web browsers, qutebrowser should just work with qtwebengine ported.
 
@@ -45,8 +44,8 @@ This project when finished will consist of:
 + A simple blog with my progress! I will put everything there and then rewrite important parts as documentation on the Gentoo wiki.
 
 
-** Timeline
-Expected 175 hours.
+* Timeline
+Expected 175 hours. (5 weeks)
 Further info after discussion with mentor.
 
 + Setting up an ideal working environment and learning the workflow of Gentoo will be done before the project starts,
@@ -54,19 +53,30 @@ Further info after discussion with mentor.
   
 Most of my project will be around porting the KDE desktop and application suite,
 starting with getting the desktop itself to run and later on porting the applications.
-
-1. Getting core libraries ported so Plasma can build correctly.
-2. The Plasma desktop itself, starting with the basic parts like the window manager.
+I will divide packages into three groups: builds, runs and works.
+"Works" means runs correctly without apparent bugs.
+** Week 1
+   Getting core libraries ported so Plasma can build correctly.
+   + the QT libraries (except qtwebengine)
+   + kde-plasma/kwayland-server
+   + kde-plasma/libk*
+** Week 2 & 3
+   The Plasma desktop itself, starting with the basic parts like the window manager.
    Then making sure other essential parts like the dock, settings panel and status bar function correctly.
-   This means kde-plasma/plasma-meta will build and run correctly.
-3. A web browser, probably something based on qtwebengine like qutebrowser.
-4. Working out KDE Plasma bugs and porting other KDE applications.
+   This means kde-plasma/plasma-meta will build and run.
+** Week 4
+   Making sure the KDE desktop runs correctly, polishing all runtime bugs.
+   Also getting a web browser to run like Qutebrowser, which should just build and
+   run when dev-qt/qtwebengine works. 
+** Week 5 (and onward)
+   Working out KDE Plasma bugs and porting other KDE applications.
+   Starting with Dolphin, Konsole and Ark, then Gwenview, Kate, Okular and Kcalc if time allows it.
    
 
 Documentation will be written continuously during the project.
 
 
-** Biography
+* Biography
 Hello! My name is Alfred. I am a Swedish 19 year old and I've been a Gentoo user for around 1.5 years now comming from Windows and macOS.
 I think Gentoo is an awesome operating system because it gives the user so much control.
 I currently run Gentoo/musl on my laptop with Sway and Pipewire with the intent of putting it on my espressobin router as well.
