@@ -44,16 +44,22 @@ This project when finished will consist of:
   All patches will be put in ::gentoo and musl will "just be supported" without the need of an overlay repository.
 + A simple blog with my progress! I will put everything there and then rewrite important parts as documentation on the Gentoo wiki.
 
+  
 
 ** Timeline
 Expected 175 hours.
 Further info after discussion with mentor.
 
++ Setting up an ideal working environment and learning the workflow of Gentoo will be done before the project starts, mostly during the "Community Bonding"-period.
+  
+Most of my project will be around porting the KDE desktop and application suite, starting with getting the desktop itselfd to run and later on porting the applications. 
 1. Getting core libraries ported so Plasma can build correctly.
 2. The Plasma desktop itself, starting with the basic parts like the window manager.
    Then making sure other essential parts like the dock, settings panel and status bar function correctly.
+   This means kde-plasma/plasma-meta will build and run correctly.
 3. A web browser, probably something based on qtwebengine like qutebrowser.
 4. Working out KDE Plasma bugs and porting other KDE applications.
+   
 
 Documentation will be written continuously during the project.
 
