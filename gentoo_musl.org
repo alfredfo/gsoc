@@ -64,7 +64,7 @@ Getting core libraries ported so Plasma can build correctly.
 ** Week 3 & 4
 The Plasma desktop itself, starting with the basic parts like the window manager.
 Then making sure other essential parts like the dock, settings panel and status bar function correctly.
-This means kde-plasma/plasma-meta will run.
+This means kde-plasma/plasma-meta will run, as well as packages regarding sound, bluetooth and wifi.
 ** Week 5
 Making sure the KDE desktop runs correctly by passing all test suites and manually checking for runtime bugs.
 By week 5 most, if not all, tests should pass for the software currently ported.
