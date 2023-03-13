@@ -27,15 +27,9 @@ The current way Fuchsia builds their libc is fairly strange. They use their own 
 #+end_quote
 
 * Objective
-The goal of this project is to improve the number of packages to run with musl libc on Gentoo, with a focus on desktop and development use-cases.
-Primarily the Plasma desktop environment along with the KDE Applications and QT libraries.
-
-As musl is developed with security in mind I hope this project will make it become the default libc implementation for Gentoo hardened desktops.
-I also hope that more binary packages (*-bin) will become statically linked with musl for ensuring compatibility with every setup, regardless of the system libc implementation.
-
-musl is also known for being able to find runtime bugs for software buildable with glibc. These bugs will also be reported benefiting both musl and glibc users.
-
-
+The goal of this project is to get a Gentoo Linux system running with LLVM
+libc running as the system libc, in other words, bootstrapping Portage
+on a LLVM/Linux system.
 
 
 * Deliverables
