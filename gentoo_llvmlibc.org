@@ -52,8 +52,13 @@ two complete libcs, one that now has to be removed. -- *Michael Jones
 
 * Objective
 The goal of this project is to get a Gentoo Linux system running with LLVM
-libc running as the system libc, in other words, bootstrapping Portage
-on a LLVM/Linux system.
+libc as the system libc, in other words, bootstrapping Portage
+on a LLVM/Linux system. The first big step here will be getting Python
+running for Portage. When this is done I will continue working on
+getting more software from ::gentoo running with LLVM libc. My goal is
+to have a working terminal-based desktop with simple utilities, and an
+experimental stage3 for others who want to contribute, or simply want
+to try something new :)
 
 * Feasibility
 I have spoken with Michael Jones, a LLVM libc developer, about this
