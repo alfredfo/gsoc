@@ -5,25 +5,48 @@
 #+LATEX_HEADER: \usepackage[margin=1.0in]{geometry}
 
 * Introduction
-LLVM libc is a relatively new libc implementation created by the LLVM foundation. It is still not complete and lacks some functionality one may assume, such as dynamic linking and the ability to use ~libc++~ for linking C++ programs. This will be one of the first efforts to create a whole actual system using it.
+LLVM libc is a relatively new libc implementation created by the LLVM
+foundation. It is still not complete and lacks some functionality one
+may assume, such as dynamic linking and the ability to use ~libc++~
+for linking C++ programs. This will be one of the first efforts to
+create a whole actual system using it.
 
 ** Goals of the libc
-The goals of this libc is to be a cross platform (Windows, macOS, Linux and Fuschia) C library that includes a complete test suite for both public and internal functions. It also permits fuzzing and sanitizer instrumentation for binaries that include libc functions. It is also easily decomposed so users can replace C library functionality easily, to for example get consistent math precision for ~libm~.
+The goals of this libc is to be a cross platform (Windows, macOS,
+Linux and Fuschia) C library that includes a complete test suite for
+both public and internal functions. It also permits fuzzing and
+sanitizer instrumentation for binaries that include libc functions. It
+is also easily decomposed so users can replace C library functionality
+easily, to for example get consistent math precision for ~libm~.
 
 ** Standards compliance
-LLVM libc will be compliant with POSIX and recent C standards, such as C17 and C23.
+LLVM libc will be compliant with POSIX and recent C standards, such as
+C17 and C23.
 
 ** Build modes
-Interestingly this libc can be built in both *fullbuild mode* and *overlay mode*.
+Interestingly this libc can be built in both *fullbuild mode* and
+*overlay mode*.
 
-Fullbuild mode is the traditional way of building a libc, meaning that the libc will be built as ~libc.a~ and all executables depending on libc functionality will link to it as usual.
+Fullbuild mode is the traditional way of building a libc, meaning that
+the libc will be built as ~libc.a~ and all executables depending
+libc functionality will link to it as usual.
 
-Overlay mode on the other hand builds LLVM libc as ~libllvmlibc.a~ and does not replace the system libc implementation completely. Instead it uses link order semantics to primarily link binaries to LLVM libc, and missing functions will instead be linked to the system libc.
+Overlay mode on the other hand builds LLVM libc as ~libllvmlibc.a~ and
+does not replace the system libc implementation completely. Instead it
+uses link order semantics to primarily link binaries to LLVM libc, and
+missing functions will instead be linked to the system libc.
 
-Fushcia currently uses a mixture of musl and LLVM libc. It does not use overlay mode but instead a custom build system that takes parts of both.
+Fushcia currently uses a mixture of musl and LLVM libc. It does not
+use overlay mode but instead a custom build system that takes parts
+both.
 
 #+begin_quote
-The current way Fuchsia builds their libc is fairly strange. They use their own custom build system to build a libc that's made of both LLVM libc parts and musl parts. This makes it so that when they finish switching all the functions over they have a single libc instead of two complete libcs, one that now has to be removed. -- *Michael Jones (LLVM libc developer)*
+The current way Fuchsia builds their libc is fairly strange. They use
+their own custom build system to build a libc that's made of both LLVM
+libc parts and musl parts. This makes it so that when they finish
+switching all the functions over they have a single libc instead of
+two complete libcs, one that now has to be removed. -- *Michael Jones
+(LLVM libc developer)*
 #+end_quote
 
 * Objective
