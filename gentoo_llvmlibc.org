@@ -119,7 +119,7 @@ my help I will use [[https://openlibm.org/][Julia's openlibm]] and [[https://wik
 
 * Deliverables
 + Portage running on a llvmlibc/Linux system.
-+ Basic utilities for a basic terminal-based desktop.
++ Basic utilities for a terminal-based desktop.
 + An experimental stage3 tarball for other users.
 + Documentation on Gentoo wiki and blog posts.
 
