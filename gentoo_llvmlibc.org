@@ -75,8 +75,8 @@ two complete libcs, one that now has to be removed. -- *Michael Jones
 (LLVM libc developer)*
 #+end_quote
 
-*** Drawbacks of LLVM libc
-The libc is still incomplete and lacks functionality one
+*** Current Deficiencies of LLVM libc
+LLVM libc is still incomplete and lacks functionality one
 may assume, such as dynamic linking and the ability to use ~libc++~
 for linking C++ programs. However, this is planned for the future.
 
