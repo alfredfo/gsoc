@@ -16,7 +16,7 @@ such as ~printf~, ~malloc~, ~dlinfo~, and those part of
 ~math.h~. It also provides type definitions like those found in
 ~stdint.h~.
 
-On Gentoo Linux there are currently two supported libc's, namely
+On Gentoo Linux there are currently two supported standard C libraries, namely
 *glibc* (~sys-libs/glibc~) and *musl* (~sys-libs/musl~).
 
 ** The LLVM C Library
