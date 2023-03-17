@@ -6,10 +6,12 @@
 
 * Introduction
 LLVM libc is a relatively new libc implementation created by the LLVM
-foundation. It is still not complete and lacks some functionality one
+foundation. From the start it has been developed and designed with
+LLVM tooling in mind for excellent fuzzing and sanitizer
+support. However, it is still incomplete and lacks functionality one
 may assume, such as dynamic linking and the ability to use ~libc++~
 for linking C++ programs. This will be one of the first efforts to
-create a whole actual system using it.
+create a whole actual Linux system using it.
 
 ** Goals of the libc
 The goals of this libc is to be a cross platform (Windows, macOS,
