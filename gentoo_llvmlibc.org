@@ -5,27 +5,42 @@
 #+LATEX_HEADER: \usepackage[margin=1.0in]{geometry}
 
 * Introduction
-LLVM libc is a relatively new libc implementation created by the LLVM
-foundation. From the start it has been developed and designed with
+The *C standard library*, normally written *libc*, is a library for
+the C programming language providing a standardized interface to
+the operating system, as well as many other built-in C functions.
+For Unix-like systems this library is often written with standards in
+mind such as *POSIX* and *ISO C* to provide portability for C programs
+targeting these standards. More specifically it provides an
+abstraction for the kernel's syscall interface, and standard C functions
+such as ~printf~, ~malloc~, ~dlinfo~, and those part of
+~math.h~. It also provides type definitions like those found in
+~stdint.h~.
+
+On Gentoo Linux there are currently two supported libc's, namely
+*glibc* (~sys-libs/glibc~) and *musl* (~sys-libs/musl~).
+
+** The LLVM C Library
+*The LLVM C Library*, or *LLVM libc* is a relatively new libc implementation part of the LLVM
+project and created by the LLVM foundation.
+
+*** Goals of the libc
+The goals of this libc is to be a modular and cross platform (Windows, macOS,
+Linux and Fuschia) C library part of the LLVM project.
+
+From the start it has been developed and designed with
 LLVM tooling in mind for excellent fuzzing and sanitizer
-support. However, it is still incomplete and lacks functionality one
-may assume, such as dynamic linking and the ability to use ~libc++~
-for linking C++ programs. This will be one of the first efforts to
-create a whole actual Linux system using it.
+support. This includes sanitizer instrumentation of user binaries
+including the libc functions. It also includes a complete test suite
+for testing the public interface and internal functions.
 
-** Goals of the libc
-The goals of this libc is to be a cross platform (Windows, macOS,
-Linux and Fuschia) C library that includes a complete test suite for
-both public and internal functions. It also permits fuzzing and
-sanitizer instrumentation for binaries that include libc functions. It
-is also easily decomposed so users can replace C library functionality
-easily, to for example get consistent math precision for ~libm~.
+LLVM libc is also easily decomposed so users can replace C library
+functionality easily, to for example get consistent math precision for ~libm~
 
-** Standards compliance
+*** Standards compliance
 LLVM libc will be compliant with POSIX and recent C standards, such as
 C17 and C23.
 
-** Build modes
+*** Build modes
 Interestingly this libc can be built in both *fullbuild mode* and
 *overlay mode*.
 
@@ -51,6 +66,11 @@ switching all the functions over they have a single libc instead of
 two complete libcs, one that now has to be removed. -- *Michael Jones
 (LLVM libc developer)*
 #+end_quote
+
+*** Drawbacks of LLVM libc
+The libc is still incomplete and lacks functionality one
+may assume, such as dynamic linking and the ability to use ~libc++~
+for linking C++ programs. However, this is planned for the future.
 
 * Objective
 The goal of this project is to get a Gentoo Linux system running with LLVM
