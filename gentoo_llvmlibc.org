@@ -35,8 +35,9 @@ support. This includes a complete test suite for the public interface
 and internal functions, and sanitizer instrumentation of user binaries
 which includes libc functions.
 
-LLVM libc is also easily decomposed so users can replace C library
-functionality easily, to for example get consistent math precision for ~libm~
+LLVM libc is also easily decomposed so users can replace, or pick and
+choose libc functionality easily, to for example get consistent math
+precision for ~libm~.
 
 The libc tries to stay clear of any assembly language or platform
 dependent ABI unless absolutely necessary. To combat performance
