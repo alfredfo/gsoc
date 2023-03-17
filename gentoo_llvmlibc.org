@@ -102,8 +102,11 @@ Will work 6 hours a day on mon, tue, wed & thu and 5 hours on sundays.
 ** TODO Expected weekly work
 ... + expected work for each week
 
-Documentation will be written continuously during the project, and blog posts will be made at the end of each week.
-If I discover something I want to write about / think is extremely useful I may write a separate blog post for that at any time during the project as well. 
+Documentation will be written continuously during the project, and
+blog posts will be made at the end of each week.
+If I discover something I want to write about / think is extremely
+useful I may write a separate blog post for that at any time during
+the project as well.
 
 * Backup Plan
 My backup plan is to do the exact same thing but instead with overlay
