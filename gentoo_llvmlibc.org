@@ -27,7 +27,7 @@ works under the the Linux kernel.
 
 *** Goals of the libc
 The goals of this libc is to be a modular and cross platform (Windows, macOS,
-Linux and Fuschia) C library part of the LLVM project.
+Linux and Fuschia) C standard library part of the LLVM project.
 
 From the start it has been developed and designed with
 LLVM tooling in mind for excellent testing, fuzzing and sanitizer
