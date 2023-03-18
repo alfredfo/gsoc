@@ -91,7 +91,11 @@ experimental stage3 for others who want to contribute, or simply want
 to try something new :)
 
 ** TODO Crossdev
-Set up LLVM libc using crossdev
+Using *crossdev* I will also create a cross compiler for
+~x86_64-gentoo-linux-llvm~. To do this I will need to add entries for
+LLVM libc in ~gnuconfig~ and also make sure all ebuilds build with
+the  ~-static~ flag as LLVM libc currently does not support dynamic
+linking.
 
 * Feasibility
 I have spoken with Michael Jones, a LLVM libc developer, about this
