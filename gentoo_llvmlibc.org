@@ -134,7 +134,7 @@ on work to get these missing functions upstreamed into LLVM libc. To
 my help I will use [[https://openlibm.org/][Julia's openlibm]] and [[https://wiki.musl-libc.org/mathematical-library.html][musl's libm]].
 
 * Deliverables
-+ Portage running on a llvmlibc/Linux system.
++ Portage running on a llvm-libc/Linux system.
 + Basic utilities for a terminal-based desktop.
 + An experimental stage3 tarball for other users.
 + Documentation on Gentoo wiki and blog posts.
