@@ -83,7 +83,7 @@ for linking C++ programs. However, this is planned for the future.
 * Objective
 The goal of this project is to get a Gentoo Linux system running with LLVM
 libc as the system libc, in other words, bootstrapping Portage
-on a LLVM/Linux system. The first big step here will be getting Python
+on a llvm-libc/Linux system. The first big step here will be getting Python
 running for Portage. When this is done I will continue working on
 getting more software from ::gentoo running with LLVM libc. My goal is
 to have a working terminal-based desktop with simple utilities, and an
