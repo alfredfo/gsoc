@@ -107,7 +107,7 @@ needs to target a triple, not just processor arcitecture.
 My idea here is to extend it in such a way that
 ~crossdev --llvm -t x86_64-gentoo-linux-llvm~ builds
 ~sys-libs/compiler-rt~ for the specified
-triple, and also makes sure that the host's LLVM toolchain is supports
+triple, and also makes sure that the host's LLVM toolchain supports
 the target architecture by checking the ~LLVM_TARGET~ USE-flag.
 * Feasibility
 I have spoken with Michael Jones, a LLVM libc developer, about this
