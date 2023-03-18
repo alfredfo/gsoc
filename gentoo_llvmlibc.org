@@ -97,6 +97,13 @@ LLVM libc in ~gnuconfig~ and also make sure all ebuilds build with
 the  ~-static~ flag as LLVM libc currently does not support dynamic
 linking.
 
+*** Extending Crossdev with ~compiler-rt~ Building Support
+As a side project I will also extend crossdev to allow building
+~compiler-rt~ for other triples than the host so that ~Clang~ can be
+used as a cross compiler. Currently the ~sys-libs/compiler-rt~ ebuild
+does not respect the ~LLVM_TARGETS~ USE-flag because it
+needs to target a triple, not just processor arcitecture.
+
 * Feasibility
 I have spoken with Michael Jones, a LLVM libc developer, about this
 project and gotten a very positive response. My guess is that the
