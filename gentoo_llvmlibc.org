@@ -142,9 +142,17 @@ my help I will use [[https://openlibm.org/][Julia's openlibm]] and [[https://wik
 * Timeline
 Expected 350 hours. (12 weeks, 28h/week)
 Will work 6 hours a day on mon, tue, wed & thu and 5 hours on sundays.
+As I also did Gentoo GSoC last year I will dedicate no time to learn
+Gentoo's workflow such as Bugzilla or Git.
 
-** TODO Expected weekly work
-... + expected work for each week
+For initial porting I will set up a llvm-libc/Linux chroot system
+using the Linux from Scratch manual. Here I will work on getting all
+needed dependencies for Portage to run.
+
+After this is done I will instead switch focus to crossdev for
+development because it makes things such as creating stage3 tarballs
+easy.
+
 
 Documentation will be written continuously during the project, and
 blog posts will be made at the end of each week.
