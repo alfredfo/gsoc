@@ -165,6 +165,11 @@ This week I will get core libraries and utilities set up for my
 chroot that are necessary to get Python running. If I have time I will
 also work on getting Python running.
 
+*** Week 3
+After this week Python should run in my chroot. This will require me
+to temporarily hack in some math functions as alluded to earlier. Later in this
+project I will work on getting these upstreamed.
+
 Documentation will be written continuously during the project, and
 blog posts will be made at the end of each week.
 If I discover something I want to write about / think is extremely
