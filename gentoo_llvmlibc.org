@@ -160,6 +160,11 @@ This week I will set up a LLVM toolchain and sysroot for compiling
 programs targeting LLVM libc. I will also start setting up a
 "llvm-libc/Linux from Scratch" chroot.
 
+*** Week 2
+This week I will get core libraries and utilities set up for my
+chroot that are necessary to get Python running. If I have time I will
+also work on getting Python running.
+
 Documentation will be written continuously during the project, and
 blog posts will be made at the end of each week.
 If I discover something I want to write about / think is extremely
