@@ -90,7 +90,7 @@ to have a working terminal-based desktop with simple utilities, and an
 experimental stage3 for others who want to contribute, or simply want
 to try something new :)
 
-** TODO Crossdev
+** Crossdev
 Using *crossdev* I will also create a cross compiler for
 ~x86_64-gentoo-linux-llvm~. To do this I will need to add entries for
 LLVM libc in ~gnuconfig~ and also make sure all ebuilds build with
