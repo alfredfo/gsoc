@@ -153,6 +153,12 @@ After this is done I will instead switch focus to crossdev for
 development because it makes things such as creating stage3 tarballs
 easy.
 
+** Expected weekly work
+
+*** Week 1
+This week I will set up a LLVM toolchain and sysroot for compiling
+programs targeting LLVM libc. I will also start setting up a
+"llvm-libc/Linux from Scratch" chroot.
 
 Documentation will be written continuously during the project, and
 blog posts will be made at the end of each week.
