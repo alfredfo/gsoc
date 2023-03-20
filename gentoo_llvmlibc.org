@@ -22,12 +22,12 @@ On Gentoo Linux there are currently two supported standard C libraries, namely
 ** The LLVM C Library
 *The LLVM C Library*, or *LLVM libc*, is a relatively new libc
 implementation created by the LLVM foundation. It is currently in use in
-Google's Fuschia operating system together with musl libc, but it also
+Google's Fuchsia operating system together with musl libc, but it also
 works under the the Linux kernel.
 
 *** Goals of the libc
 The goals of this libc is to be a modular and cross platform (Windows, macOS,
-Linux and Fuschia) C standard library part of the LLVM project.
+Linux and Fuchsia) C standard library part of the LLVM project.
 
 From the start it has been developed and designed with
 LLVM tooling in mind for excellent testing, fuzzing and sanitizer
@@ -62,7 +62,7 @@ uses link order semantics to primarily link binaries to LLVM libc, and
 missing functions will instead be linked to the system
 libc. [fn::Dynamic linking is not yet supported, hence only .a].
 
-Fushcia currently uses a mixture of musl and LLVM libc. It does not
+Fuchsia currently uses a mixture of musl and LLVM libc. It does not
 use overlay mode but instead a custom build system that takes parts
 both.
 
