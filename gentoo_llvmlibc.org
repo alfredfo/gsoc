@@ -51,19 +51,6 @@ uses link order semantics to primarily link binaries to LLVM libc, and
 missing functions will instead be linked to the system
 libc. [fn::Dynamic linking is not yet supported, hence only .a].
 
-Fuchsia currently uses a mixture of musl and LLVM libc. It does not
-use overlay mode but instead a custom build system that takes parts
-both.
-
-#+begin_quote
-The current way Fuchsia builds their libc is fairly strange. They use
-their own custom build system to build a libc that's made of both LLVM
-libc parts and musl parts. This makes it so that when they finish
-switching all the functions over they have a single libc instead of
-two complete libcs, one that now has to be removed. -- *Michael Jones
-(LLVM libc developer)*
-#+end_quote
-
 *** Current Deficiencies of LLVM libc
 LLVM libc is still incomplete and lacks functionality one
 may assume, such as dynamic linking and the ability to use ~libc++~
