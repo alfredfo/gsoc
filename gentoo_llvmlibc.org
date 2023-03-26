@@ -21,28 +21,17 @@ On Gentoo Linux there are currently two supported standard C libraries, namely
 
 ** The LLVM C Library
 *The LLVM C Library*, or *LLVM libc*, is a relatively new libc
-implementation created by the LLVM foundation. It is currently in use in
+implementation part of the LLVM project. It is currently in use in
 Google's Fuchsia operating system together with musl libc, but it also
 works under the the Linux kernel.
 
-*** Goals of the libc
-The goals of this libc is to be a modular and cross platform (Windows, macOS,
-Linux and Fuchsia) C standard library part of the LLVM project.
+It is developed with LLVM tooling in mind for excellent testing,
+fuzzing and sanitizer support. One can also easily replace or pick and
+choose functionality to for example get consistent math precision for
+~libm~.
 
-From the start it has been developed and designed with
-LLVM tooling in mind for excellent testing, fuzzing and sanitizer
-support. This includes a complete test suite for the public interface
-and internal functions, and sanitizer instrumentation of user binaries
-which includes libc functions.
-
-LLVM libc is also easily decomposed so users can replace, or pick and
-choose libc functionality easily, to for example get consistent math
-precision for ~libm~.
-
-The libc tries to stay clear of any assembly language or platform
-dependent ABI unless absolutely necessary. To combat performance
-related issues efforts will instead be made to improve code generation
-in the compiler.
+The libc tries to stay clear of any assembly language and efforts will
+instead be made to improve code generation in the compiler.
 
 *** Standards compliance
 LLVM libc will be compliant with POSIX and recent C standards, such as
