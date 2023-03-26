@@ -167,6 +167,10 @@ During these weeks I will work on getting @system built and running.
 This week I will get other terminal utilities running. Such as the
 ~mg~ editor, ~cURL~, and ~OpenDoas~.
 
+*** Week 9
+Further polishing the LLVM integration for Crossdev. Work on
+upstreaming.
+
 Documentation will be written continuously during the project, and
 blog posts will be made at the end of each week.
 If I discover something I want to write about or think is extremely
