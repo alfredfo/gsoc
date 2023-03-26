@@ -154,6 +154,12 @@ to compile ~sys-libs/compiler-rt~ for other triples than ~CHOST~. I
 intend to use this during the  project and work on bugs as they come
 up. Later on after testing I will work on getting it upstreamed.
 
+*** Week 5
+After this week I will have a ~x86_64-gentoo-linux-llvm~ crossdev
+toolchain ready that compiles binaries using Clang and links to LLVM
+libc. From here on I will work using this instead of the LFS
+environment.
+
 Documentation will be written continuously during the project, and
 blog posts will be made at the end of each week.
 If I discover something I want to write about or think is extremely
