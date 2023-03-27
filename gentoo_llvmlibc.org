@@ -16,7 +16,7 @@ target standards such as *POSIX* and *ISO C*. Therefore, any libc
 fully implementing these standards should work in Gentoo.
 
 Note that there are exceptions to this, notably packages that
-target extended functionality provided by ~glibc~. These are commonly
+target extended functionality provided by glibc. These are commonly
 refered to as *GNU extensions*. In fact, my GSoC project last year was
 about improving musl support for Gentoo. This almost exclusively
 involved replacing usage of GNU extensions with standards compliant
