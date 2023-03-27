@@ -7,17 +7,24 @@
 * Introduction
 The *C standard library*, normally written *libc*, is a library for
 the C programming language providing a standardized interface to
-the operating system, as well as many other built-in C functions.
-For Unix-like systems this library is often written with standards in
-mind such as *POSIX* and *ISO C* to provide portability for C programs
-targeting these standards. More specifically it provides an
-abstraction for the kernel's syscall interface, and standard C functions
-such as ~printf~, ~malloc~, ~dlinfo~, and those part of
-~math.h~. It also provides type definitions like those found in
-~stdint.h~.
+the operating system, as well as many other built-in C functions. More
+specifically it provides an abstraction for the kernel's syscall
+interface, and standard C functions such as ~printf~, ~malloc~,
+~dlinfo~, and those part of ~math.h~. It also provides type
+definitions like those found in ~stdint.h~.
 
 On Gentoo Linux there are currently two supported standard C libraries, namely
-*glibc* (~sys-libs/glibc~) and *musl* (~sys-libs/musl~).
+*glibc* (~sys-libs/glibc~) and *musl* (~sys-libs/musl~). However,
+packages in ~::gentoo~ are not actually targeting specific libc's. Instead, they
+target standards such as *POSIX* and *ISO C*. Therefore, any libc
+fully implementing these standards should work in Gentoo.
+
+Note that there are exceptions to this, notably packages that
+target extended functionality provided by ~glibc~. These are commonly
+refered to as *GNU extensions*. In fact, my GSoC project last year was
+about improving musl support for Gentoo. This almost exclusively
+involved replacing usage of GNU extensions with standards compliant
+alternatives.
 
 ** The LLVM C Library
 *The LLVM C Library*, or *LLVM libc*, is a relatively new libc
