@@ -20,7 +20,9 @@ target extended functionality provided by ~glibc~. These are commonly
 refered to as *GNU extensions*. In fact, my GSoC project last year was
 about improving musl support for Gentoo. This almost exclusively
 involved replacing usage of GNU extensions with standards compliant
-alternatives.
+alternatives. For this reason, efforts made to support additional platforms such as
+LLVM libc will increase software portability as a whole, which
+benefits everyone.
 
 ** The LLVM C Library
 *The LLVM C Library*, or *LLVM libc*, is a relatively new libc
