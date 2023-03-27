@@ -166,7 +166,9 @@ libc. From here on I will work using this instead of the LFS
 environment.
 
 *** Week 6 and 7
-During these weeks I will work on getting @system built and running.
+During these weeks I will work on getting @system built and
+running. Most test suites should also pass.by week 7.
+This will not include system compiler.
 
 *** Week 8
 This week I will get other terminal utilities running. Such as the
