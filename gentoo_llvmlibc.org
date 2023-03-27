@@ -188,7 +188,7 @@ upstreaming.
 
 *** Week 10 and 11
 This week I will work on getting my changes to LLVM libc, like fudged
-in functions, properly upstreamed. I do not expect every function to
+in functions properly upstreamed. I do not expect every function to
 get upstreamed after week 11, but initial work should be done.
 
 *** Week 12
