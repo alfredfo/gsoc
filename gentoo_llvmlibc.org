@@ -172,7 +172,15 @@ This will not include system compiler.
 
 *** Week 8
 This week I will get other terminal utilities running. Such as the
-~mg~ editor, ~cURL~, and ~OpenDoas~.
+~mg~ editor, ~cURL~, ~gdb~ and ~OpenDoas~. As many test suites as possible
+should run, unless they have unreasonable dependencies. For example GDB:
+#+begin_quote
+Doxygen-1.9.6, GCC-12.2.0 (ada, gfortran, and go are used for tests),
+Guile-3.0.9, Python-2.7.18, rustc-1.68.1 (used for some tests),
+Valgrind-3.20.0, and SystemTap (run-time, used for
+tests)
+--- https://www.linuxfromscratch.org/blfs/view/svn/general/gdb.html
+#+end_quote
 
 *** Week 9
 Further polishing the LLVM integration for Crossdev. Work on
