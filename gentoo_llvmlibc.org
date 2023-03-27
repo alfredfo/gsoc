@@ -7,11 +7,7 @@
 * Introduction
 The *C standard library*, normally written *libc*, is a library for
 the C programming language providing a standardized interface to
-the operating system, as well as many other built-in C functions. More
-specifically it provides an abstraction for the kernel's syscall
-interface, and standard C functions such as ~printf~, ~malloc~,
-~dlinfo~, and those part of ~math.h~. It also provides type
-definitions like those found in ~stdint.h~.
+the operating system, as well as many other built-in C functions.
 
 On Gentoo Linux there are currently two supported standard C libraries, namely
 *glibc* (~sys-libs/glibc~) and *musl* (~sys-libs/musl~). However,
