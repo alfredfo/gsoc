@@ -119,6 +119,7 @@ my help I will use [[https://openlibm.org/][Julia's openlibm]] and [[https://wik
 + Basic utilities for a terminal-based desktop.
 + An experimental stage3 tarball for other users.
 + Documentation on Gentoo wiki and blog posts.
++ Being able to use Crossdev with the LLVM toolchain.
 
 * Timeline
 Expected 350 hours. (12 weeks, 28h/week)
