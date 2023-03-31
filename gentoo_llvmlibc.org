@@ -213,7 +213,15 @@ can fall back to system libc for missing functionality.
 Hello! My name is Alfred. I am a Swedish 20 year old and I've been a
 Gentoo user for around 2.5 years now comming from Windows and macOS.
 
-... + more (my last gsoc project)
+Last year I did a Gentoo GSoC project about extending musl support for
+KDE on Gentoo. It involved fixing a lot of build-time errors, mostly for
+dependencies, as well as some runtime issues that caused
+crashes. During this project I learned a lot, for example,
+...
+
+Before GSoC I was somewhat experienced with C++, the Windows API, x86
+assembly, and low level debugging
+...
 
 I think Gentoo is an awesome operating system because it gives the
 user so much control.
