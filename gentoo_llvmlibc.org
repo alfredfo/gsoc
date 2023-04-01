@@ -235,6 +235,15 @@ also knew some basic usage of Git, but because I never worked with
 other people it was mostly:
 ~git commit -am "change"; git push~.
 
+** Education
+Currently I am studying second year electrical engineering at Chalmers
+university with a goal of getting a masters degree in some field
+related to computers or mathematics.
+Before that I went to high school at Hvitfeldtska, there I studied science with
+mathematical specialization, meaning science but with 4 additional
+math courses.
+I have no programming knowledge from school except some introductory
+C++, Python and MATLAB courses.
 
 I think Gentoo is an awesome operating system because it gives the
 user so much control.
