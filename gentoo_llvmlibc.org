@@ -227,6 +227,14 @@ lot with both the main Gentoo repository and also various upstreams.
 Another thing I got experience with was working with build
 systems such as CMake and Meson.
 
+** Computer knowledge before GSoC
+Before GSoC I had experience with C++, the Windows API, x86 assembly,
+and low level debugging with various Windows debuggers. This was
+because I got interested in creating game cheats at an early age. I
+also knew some basic usage of Git, but because I never worked with
+other people it was mostly:
+~git commit -am "change"; git push~.
+
 
 I think Gentoo is an awesome operating system because it gives the
 user so much control.
