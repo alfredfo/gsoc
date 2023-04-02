@@ -244,6 +244,3 @@ mathematical specialization, meaning science but with 4 additional
 math courses.
 I have no programming knowledge from school except some introductory
 C++, Python and MATLAB courses.
-
-I think Gentoo is an awesome operating system because it gives the
-user so much control.
