@@ -114,6 +114,9 @@ My idea here is to temporarily hack in the missing functions and later
 on work to get these missing functions upstreamed into LLVM libc. To
 my help I will use [[https://openlibm.org/][Julia's openlibm]] and [[https://wiki.musl-libc.org/mathematical-library.html][musl's libm]].
 
+In general I think this project is very feasible, especially with the
+upstream support. This proposal is also shared with the LLVM libc team.
+
 * Deliverables
 + Portage running on a llvm-libc/Linux system.
 + Basic utilities for a terminal-based desktop.
