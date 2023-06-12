@@ -1,0 +1,63 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Hey! I had to start GSoC on sunday last week due to school, and I didn't
+think that I'd write a weekly report for the first week but I decided to
+do it anyways.
+
+My plan for week 1 was:
+> This week I will set up a LLVM toolchain and sysroot for compiling
+> programs targeting LLVM libc. I will also start setting up a
+> "llvm-libc/Linux from Scratch" chroot.
+
+Because I played with LLVM libc before last week I had already completed this
+goal. Going forward I will only work in the sysroot until setting up
+crossdev because it's simple and gives me everything I need to fix
+dependencies like Python.
+
+This far the project has been going pretty smooth, but I've also ran
+into some issues which I will comment on.
+
+The first issue was regarding SSP when setting up the LLVM
+toolchain. LLVM libc currently does not support stack smashing
+protection, and somehow compiled binaries automatically wants it if the
+toolchain was built with SSP enabled, even when compiling with
+- -fno-stack-protector. Probably this has something to do with internal
+libraries getting built with it. I spent quite a bit of time on this
+because I forgot CXXFLAGS was a thing and only set CFLAGS, thinking that
+something else was causing it :). Why this works out of the box on some
+other distributions, hence not in setup docs, is because Gentoo enables
+SSP in the clang config files.
+
+(See: https://blogs.gentoo.org/mgorny/2022/10/07/clang-in-gentoo-now-sets-default-runtimes-via-config-file/)
+
+
+I then moved on to work on Python. When I talked with LLVM libc
+developers about this project they told me that the biggest obstacle for
+Python would be the missing libm functions, so I decided to use Julia's
+openlibm instead of the built in one.
+
+> I'd guess that python wouldn't quite work yet since we don't have all
+> of the double precision math functions yet, though you might be able
+> to fudge it by creating entrypoints that just call the single
+> precision versions.
+
+Openlibm just compiled and worked
+out of the box with Python by configuring with
+- --with-libm=*libopenlibm.a*, and then substituting math.h for
+openlibm_math.h.
+
+Next week I will mostly work on Python, because libm isn't the only
+issue. Things like fileno, wide strings, pthread_cond are used in Python
+and is not in LLVM libc yet. posixsource.c is particularly annoying.
+Yes, I have a time machine.
+
+- -- 
+catcream
+-----BEGIN PGP SIGNATURE-----
+
+iIcEARYKAC8WIQTrvBqrbtsVNc2oScop9g9HYPvztAUCZIE9VxEcY2F0QGNhdGNy
+ZWFtLm9yZwAKCRAp9g9HYPvztPDgAQC2DCOzxCKIQbf6QBd+8pAvDpz55dhyzEJL
+Q/m+5o1wuQD/ecuKxM6NLSn9X73waKPlt7JdfdQY3BTerYFe9p4hEQA=
+=Sxdi
+-----END PGP SIGNATURE-----
