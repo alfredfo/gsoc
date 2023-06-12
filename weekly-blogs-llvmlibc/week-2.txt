@@ -1,0 +1,46 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Hi! This week I've continued my work on getting Python to run. It has
+mostly involved defining a lot of missing functions and types for
+Python.
+
+These are mostly taken from musl libc, but some things are also just
+implemented using a no op.
+
+In LLVM libc there are currenly some headers without all the needed
+declarations available. That will make "HAVE_*_H" configuration tests
+pass, but then fail later. For some of these cases I simply did
+'#undef' and hoped the functionality wasn't needed.
+
+My current plan is to just get Python to build, and then go back to
+fix things properly, within reason.
+
+I also found a bug in LLVM libc where the TableGen specifications for
+truncate and ftruncate had mixed up argument types. Because the
+libc headers are generated from these specifications, the unistd.h
+header had incorrect declarations for these functions. As this did not
+add any new things, and was easy to implement, I got it committed into
+upstream LLVM instead of keeping it locally like the other fixes. Sam
+suggested that if I get stuck on something and want to do something
+else for I while I could go through the spec files and look for errors
+similar to this (commit: https://reviews.llvm.org/D152664).
+
+At the end of the week I went back to fix an error I got while setting
+up LLVM libc, that being an error related to PRId64 format string. Sam
+suggested that I could use this to learn how to use cvise, which I
+will do next week.
+
+Next week I aim to be finished with Python, and in that case I'll
+continue with getting Crossdev to work with LLVM by making it able to
+compile compiler-rt for non-host triples.
+
+- -- 
+catcream
+-----BEGIN PGP SIGNATURE-----
+
+iIcEARYKAC8WIQTrvBqrbtsVNc2oScop9g9HYPvztAUCZIeDZBEcY2F0QGNhdGNy
+ZWFtLm9yZwAKCRAp9g9HYPvztCG3APsGscfW5GOK0t/vb+pA3eGxOeBGM6qXbn6Y
+rBYB6lALIwEAzxgWeiockbIHplIzSOzT2reNHbstuzkTJ3E0qUFrgQY=
+=07qL
+-----END PGP SIGNATURE-----
