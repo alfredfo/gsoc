@@ -1,0 +1,146 @@
+Hello! This is a combined report for both week 3 and 4.
+
+In these two weeks I've fixed several issues in LLVM libc, but quite a
+lot of time has also been spent purely learning things. I will start
+by going over what I've learned, and then refer to related issues.
+
+To start with I have gotten quite comfortable with CVise, how to use
+it and general tricks about writing the test script for determining
+whether the issue is still there after reducing a source file. For
+example, I had an issue about a the print format macro PRId64 not
+being defined on LLVM libc
+
+This caused an error that looked like this:
+
+> /home/cat/c/llvm-project/compiler-rt/lib/scudo/standalone/timing.h:182:22: error: expected ')'
+>    Str.append("%14" PRId64 ".%" PRId64 "(ns) %-11s", Integral, Fraction, " ");
+
+So my first attempt of reducing was to grep for "expected ')'". This
+went on to reduce the source file to simply: "(". Maybe not the most
+interesting thing, but it was the "aha-moment" for me with regards to
+CVise, because what it did with the test script became clear.
+
+To actually fix this issue I filed a bug
+https://github.com/llvm/llvm-project/issues/63317 and got told by a
+compiler-rt developer that the timing.cpp file is only used for
+performance evaluation. So the temporary fix I made was to exclude it
+from the build by checking for LLVM_LIBC_INCLUDE_SCUDO=ON in CMake
+until the print format macros are added to LLVM libc.
+
+https://reviews.llvm.org/D152979
+https://github.com/llvm/llvm-project/commit/63eb7c4e6620279c63bd42d13177a94928cabb3c
+
+###
+
+The next thing I've learned a lot about is C++ and standard C header
+interoperability, or "include hell". I learned about the differences
+between C++ standard headers like "cwhatever" and "whatever.h", also
+what #include_next did, and also that compilers ship their own header
+files like stddef.h and inttypes.h.
+
+I first ran into this when pulling new commits from master and rebuilt
+LLVM libc, thinking that the errors were related to this. Weirdly
+enough the original error just went away, and I couldn't reproduce it
+at all. But I quickly ran in to a similar issue when compiling LLVM
+libc in fullbuild mode on a llvm/musl system.
+
+This time it was an error about wint_t not being defined:
+
+> /llvm-project/build-libc-full/projects/libc/include/wchar.h:21:11: error: unknown type name 'wint_t'
+> int wctob(wint_t) __NOEXCEPT;
+
+The issue here arrises because LLVM libc's llvm-libc-types/wint_t.h
+gets the wint_t type using:
+
+> #define __need_wint_t
+> #include <stddef.h>
+> #undef __need_wint_t
+
+This depends on internal behaviour of the stddef.h header. Because
+this is C++ it will include in this case libc++'s stddef.h, but this
+#include_next's the second stddef.h in the include search path.
+
+glibc uses __need_wint_t to make stddef.h define wint_t, while musl
+uses __NEED_wint_t. No one is wrong here, as it is libc internals that
+should not be used by end users, instead something like wchar.h should
+be included. However, as this is a libc implementation too it does not
+make sense to include all of that stuff, so something else must be
+done. I then grepped the whole llvm checkout for stddef.h and realized
+that Clang shipped its own stddef.h too. This header, like glibc, uses
+__need_wint_t to define wint_t, which is exactly what I want. I posted
+a bug report and got told that the internal Clang headers are to be
+used, not the system libc's headers, because of issues like these.
+https://github.com/llvm/llvm-project/issues/63510
+
+However, somehow /usr/include is higher up in the include order than
+/usr/lib/clang/* even when using -ffreestanding, so I assume this is a
+bug with the Gentoo llvm/musl stage actually.
+
+###
+
+Another thing I have worked on is to replace some __unix__ ifdef
+checks in LLVM libc with __linux__. When looking through the source
+code there are quite a lot of places where these are mixed up
+bizarrely enough. The most obvious ones are __unix__ check followed by
+an #include <linux/*.h>. This is caused by "cargo cult" meaning that
+they once did it that way and stuck with it for no reason.
+
+I have fixed this here: https://reviews.llvm.org/D153729#4447435, but
+I will revisit this because there's a chance that macOS users could
+have used the typedefs pthread_once_t and once_flag, even though the
+underlying type __futex_word was supposed to be Linux only, because
+futexes here are Linux kernel specific. This would've
+previously not have errored out on macOS (__APPLE__) since __unix__ is
+defined, and __futex_word is just defined as an aligned 32 bit uint,
+no unconditional kernel headers used that would've broken the build.
+
+I will therefore go back and define these for macOS later.
+
+###
+
+I have also done some work on upstreaming things needed for Python
+into LLVM libc instead of just mashing everything into my Python
+source dir. The first one being the POSIX extension fdopen().
+
+As fopen is already implemented the hard part was not the function
+itself, but actually figuring out where everything in LLVM libc was
+placed. Apart from the obvious declaration in the internal headers,
+and corresponding source file, I also needed to make sure it was
+usable in the libc. In total I needed to edit 7 files, like the
+TableGen specifications, config/$arch/entrypoints.txt, libc
+exposed internal header file, and of course CMakeLists.txt.
+
+This is not upstreamed yet but I am working on it here
+https://reviews.llvm.org/D153396.
+
+The other thing I want to get upstreamed is the limits.h header, in my
+case needed for SSIZE_MAX. I have successfully made a tiny version in
+my libc tree that exposes some macros, and I will try to upstream what
+I have and then work on things one by one. Similarly here, the hard
+part was actually getting the header and macros to be exposed in the
+libc by editing build system code and specification files. I could
+have temporarily just jammed in a limits.h header file but I think
+it's important to get to know how LLVM libc does things/"how the
+boilerplate works" early in my project.
+
+###
+
+That's all the big things, I also continued work on Python, fixed some
+small stuff like a typo fix
+(https://reviews.llvm.org/rGc32ba7d5e00869de05d798ec8eb791bd1d7fb585),
+adding Emacs support in llvm-common
+(https://github.com/gentoo/gentoo/pull/31635)
+and other "Gentoo but not really GSoC work":
+https://github.com/gentoo/gentoo/pull/31560 (license fix, soju).
+https://github.com/gentoo/gentoo/pull/30933 (new package, senpai).
+
+###
+
+Next week I will work on getting Clang/LLVM supported in
+Crossdev. This will be done by first making sure that the hosts LLVM
+toolchain supports the target architecture via the LLVM_TARGETS
+USE-flag. Currently Clang on Gentoo can compile things like the
+kernel, but anything that relies on runtime libraries, like libc,
+fails due to compiler-rt not being compiled for the target triple, so
+I will also make sure that Crossdev compiles compiler-rt for the
+specified target triple.
