@@ -1,0 +1,8 @@
+Hi! I decided to move the crossdev/compiler-rt work forward one week (to
+week 5) and continued my previous work now in week 4. I will therefore write
+a bigger report for both week 3 and 4 combined this sunday. Sending this
+update in case anyone wondered where the week 3 report was.
+
+As a quick summary I've been continuing work with Python, messing a lot with include ordering /
+"include hell" when using standard C headers in C++, and also build
+breakage with musl. I've also gotten quite comfortable using cvise.
